@@ -176,7 +176,7 @@ input {
 
 .content__body {
   max-width: 349px;
-  margin: 0px auto;
+  margin: 0px 13px;
   padding: 23px 0px;
   min-height: 568px;
   background: url("../img/background-logo.svg") 50% 50%/auto 220px no-repeat fixed;
