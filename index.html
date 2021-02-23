@@ -28,6 +28,13 @@
                         <div class="header__column">
                             <div class="header__add-user">
                                 <!-- Добавить пользователя -->
+                                <a href="#" class="header__add-user-link">
+                                    <span>
+                                        <object data=" img/icons/add-users.svg" type="image/svg+xml">SVG</object>
+
+                                    </span>
+                                </a>
+                                <!-- Добавить пользователя -->
                             </div>
                         </div>
                     </div>
@@ -52,11 +59,31 @@
                                         </div>
                                         <div class="item__sign">starGroup</div>
                                     </div>
-                                    <div class="item__btn">
-                                        <div class="item__wheel">
-                                            <!-- Кнопка -->
+                                    <label class="item__wheel-show" for="btn" onblur="closeWheelList()" tabindex="0">
+                                        <div class="item__btn">
+
+                                            <div class="item__wheel">
+                                                <!-- Кнопка -->
+                                                <input class="item__wheel-check" type="checkbox" id="btn"
+                                                    onclick="openWheelList(this)">
+                                                <ul class="item__wheel-list">
+                                                    <li>
+                                                        <a href="#" class="item__wheel-link">Редактировать</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="item__wheel-link">Сменить пароль</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="item__wheel-link">Добавить сервер</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="item__wheel-link">Удалить</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
                                         </div>
-                                    </div>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -70,11 +97,31 @@
                                         </div>
                                         <div class="item__sign">Finans Bank</div>
                                     </div>
-                                    <div class="item__btn">
-                                        <div class="item__wheel">
-                                            <!-- Кнопка -->
+                                    <label class="item__wheel-show" for="btn" onblur="closeWheelList()" tabindex="0">
+                                        <div class="item__btn">
+
+                                            <div class="item__wheel">
+                                                <!-- Кнопка -->
+                                                <input class="item__wheel-check" type="checkbox" id="btn"
+                                                    onclick="openWheelList(this)">
+                                                <ul class="item__wheel-list">
+                                                    <li>
+                                                        <a href="#" class="item__wheel-link">Редактировать</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="item__wheel-link">Сменить пароль</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="item__wheel-link">Добавить сервер</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="item__wheel-link">Удалить</a>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
                                         </div>
-                                    </div>
+                                    </label>
                                 </div>
                             </div>
                         </div>
@@ -84,6 +131,7 @@
             </div>
         </section>
     </div>
+    <script src="js/script.js"></script>
 </body>
 
 </html>

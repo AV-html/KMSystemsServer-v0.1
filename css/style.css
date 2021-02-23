@@ -146,11 +146,19 @@ input {
   cursor: pointer;
 }
 
-.header__add-user {
-  background: url("../img/icons/add-users.svg") 0 0/100% no-repeat;
-  width: 23px;
-  height: 17px;
-  cursor: pointer;
+.header__add-user a {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+}
+
+.header__add-user a span {
+  display: inline-block;
+}
+
+.header__add-user a span object {
+  position: relative;
+  z-index: -1;
 }
 
 .header__search {
@@ -200,7 +208,6 @@ input {
   background: rgba(255, 255, 255, 0.75);
   border: 1px solid #c4c4c4;
   border-radius: 10px;
-  overflow: hidden;
   margin: 0px 0px 15px 0px;
 }
 
@@ -260,6 +267,7 @@ input {
 }
 
 .item__btn {
+  position: relative;
   padding: 7px 18px 6px 18px;
   background: #f1f1f1;
   -webkit-box-shadow: 0px 2px 2px rgba(146, 146, 146, 0.25);
@@ -271,6 +279,7 @@ input {
 .item__btn:active {
   position: relative;
   top: 2px;
+  left: 0px;
   -webkit-box-shadow: inset 0px 2px 2px rgba(146, 146, 146, 0.25);
           box-shadow: inset 0px 2px 2px rgba(146, 146, 146, 0.25);
 }
@@ -283,4 +292,49 @@ input {
   background-image: url("../img/icons/wheel.svg");
   width: 17px;
   height: 17px;
+}
+
+.item__wheel-check {
+  display: none;
+}
+
+.item__wheel-check:checked + .item__wheel-list {
+  display: block;
+}
+
+.item__wheel-list {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  top: 30px;
+  left: -131px;
+  min-width: 184px;
+  background: #ffffff;
+  border: 1px solid #c5c5c5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.item__wheel-list li {
+  padding: 14px 19px;
+}
+
+.item__wheel-list li:hover {
+  background: #f1f1f1;
+}
+
+.item__wheel-list li:active {
+  background: #dfdfdf;
+}
+
+.item__wheel-list li:last-child {
+  margin: 0;
+}
+
+.item__wheel-link {
+  font-size: 11px;
+  line-height: 13px;
+  color: #000000;
 }
