@@ -48,7 +48,7 @@ body.lock {
 	}
 
 	&__add-user {
-		//! Ссылка SVG
+
 		a {
 			display: inline-block;
 			position: relative;
@@ -61,11 +61,7 @@ body.lock {
 				}
 			}
 		}
-		//! Ссылка SVG
-		// background: url("../img/icons/add-users.svg") 0 0 / 100% no-repeat;
-		// width: 23px;
-		// height: 17px;
-		// cursor: pointer;
+
 	}
 
 	&__search {
@@ -194,15 +190,15 @@ body.lock {
 	}
 
 	&__wheel-check {
-		// Скрыть чек-бокс
+	
 		display: none;
 	}
 	&__wheel-check:checked + .item__wheel-list {
-		// ? По нажатию на &__wheel-check изменить свойства .item__wheel-list
-		display: block; // Открыть ul
+
+		display: block; 
 	}
 	&__wheel-list {
-		display: none; // Скрыть ul
+		display: none; 
 		position: absolute;
 		z-index: 2;
 		top: 30px;
@@ -258,20 +254,13 @@ body.lock {
 		opacity: 1;
 		visibility: visible;
 	}
-	// &.open {
-	// position: absolute;
-	// width: 100%;
-	// height: 100%;
-	// top: 0;
-	// left: 0;
-	// }
+
 
 	&__body {
 		min-height: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		// Отступы от краёв экрана при сужении
 		padding: 0px 13px;
 	}
 
