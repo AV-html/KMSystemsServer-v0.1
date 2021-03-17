@@ -6,12 +6,12 @@ body {
 	background: #e5e5e5;
 }
 body.lock {
-	overflow: hidden;
+	overflow-y: hidden;
 }
 
 .wrapper {
 	min-height: 100%;
-	overflow: hidden;
+	// overflow: hidden;
 	display: flex;
 	flex-direction: column;
 }
@@ -41,14 +41,28 @@ body.lock {
 		flex: 0 1 33.333%;
 	}
 	&__menu {
-		background: url("../img/icons/burger-menu.svg") 0 0 / 100% no-repeat;
-		width: 21px;
-		height: 13px;
+		// background: url("../img/icons/burger-menu.svg") 0 0 / 100% no-repeat;
+		// width: 21px;
+		// height: 13px;
 		cursor: pointer;
+		//! Кнопка SVG
+		button {
+			display: inline-block;
+			position: relative;
+			z-index: 1;
+			span {
+				display: inline-block;
+				object {
+					position: relative;
+					z-index: -1;
+				}
+			}
+		}
+		//! Кнопка SVG
 	}
 
 	&__add-user {
-
+		//! Ссылка SVG
 		a {
 			display: inline-block;
 			position: relative;
@@ -61,7 +75,11 @@ body.lock {
 				}
 			}
 		}
-
+		//! Ссылка SVG
+		// background: url("../img/icons/add-users.svg") 0 0 / 100% no-repeat;
+		// width: 23px;
+		// height: 17px;
+		// cursor: pointer;
 	}
 
 	&__search {
@@ -117,9 +135,6 @@ body.lock {
 	}
 	&__row:last-child {
 		margin: 0;
-	}
-
-	&__item {
 	}
 }
 .item {
@@ -190,28 +205,29 @@ body.lock {
 	}
 
 	&__wheel-check {
-	
+		// Скрыть чек-бокс
 		display: none;
 	}
-	&__wheel-check:checked + .item__wheel-list {
 
-		display: block; 
-	}
 	&__wheel-list {
-		display: none; 
+		display: none; // Скрыть ul
 		position: absolute;
-		z-index: 2;
+		z-index: 5;
 		top: 30px;
 		left: 53px - 184px;
-		min-width: 184px;
 
+		// height: 80px;
 		background: #ffffff;
 		border: 1px solid #c5c5c5;
 		box-sizing: border-box;
 		border-radius: 10px;
 		overflow: hidden;
 		li {
-			padding: 14px 19px;
+			a {
+				display: inline-block;
+				width: 184px;
+				padding: 14px 0px 15px 19px;
+			}
 		}
 		li:hover {
 			background: #f1f1f1;
@@ -230,6 +246,10 @@ body.lock {
 		line-height: 13px;
 		color: #000000;
 	}
+}
+
+.clicked {
+	display: block;
 }
 
 .popup {
@@ -255,12 +275,12 @@ body.lock {
 		visibility: visible;
 	}
 
-
 	&__body {
 		min-height: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		// Отступы от краёв экрана при сужении
 		padding: 0px 13px;
 	}
 
@@ -271,9 +291,6 @@ body.lock {
 		border-radius: 10px;
 	}
 
-	&__form {
-	}
-
 	&__title {
 		line-height: 22px;
 		font-size: 19px;
@@ -282,7 +299,7 @@ body.lock {
 	}
 	&__wrapper-input {
 		padding: 0px 33px 32px 33px;
-		input {
+		.inputs {
 			padding: 0px 0px 0px 35px;
 			background: #ffffff;
 			width: 283px;
@@ -293,11 +310,25 @@ body.lock {
 		}
 		@media (max-width: 350px) {
 			padding: 0px 16px 32px 16px;
-			input {
+			.inputs {
 				width: 260px;
 			}
 		}
 	}
+	&__type-user {
+		margin: 0px 0px 23px 0px;
+		position: relative;
+	}
+	&__type-user::before {
+		content: "";
+		background: url("../img/popup-add-user/type-users.svg") 0 0 no-repeat;
+		width: 12.69px;
+		height: 15.69px;
+		position: absolute;
+		top: 10px;
+		left: 11px;
+	}
+
 	&__username {
 		margin: 0px 0px 23px 0px;
 		position: relative;
@@ -309,6 +340,19 @@ body.lock {
 		height: 12.69px;
 		position: absolute;
 		top: 13px;
+		left: 11px;
+	}
+	&__company {
+		margin: 0px 0px 23px 0px;
+		position: relative;
+	}
+	&__company::before {
+		content: "";
+		background: url("../img/popup-add-user/company.svg") 0 0 no-repeat;
+		width: 12.69px;
+		height: 13.69px;
+		position: absolute;
+		top: 12px;
 		left: 11px;
 	}
 
@@ -374,12 +418,12 @@ body.lock {
 		}
 		background: rgba(255, 255, 255, 0.75);
 		border: 1px solid #c4c4c4;
-		box-sizing: border-box;
 		overflow: hidden;
 		border-radius: 10px;
 	}
 
 	&__close-link {
+		background: #ffffff;
 	}
 
 	&__button-submit {
@@ -404,5 +448,310 @@ body.lock {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+	}
+}
+
+.select {
+	position: relative;
+	width: 283.18px;
+	height: 39.58px;
+	margin: 0px 0px 23px 0px;
+
+	z-index: 1;
+	&[data-state="active"] {
+		.select__title {
+			&::before {
+				transform: translate(-3px, -50%) rotate(-45deg);
+			}
+
+			&::after {
+				transform: translate(3px, -50%) rotate(45deg);
+			}
+		}
+
+		.select__content {
+			opacity: 1;
+		}
+
+		.select__label + .select__input + .select__label {
+			max-height: 40px;
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+	&:before {
+		content: "";
+		width: 12.69px;
+		height: 15.69px;
+		position: absolute;
+		top: 10px;
+		left: 11px;
+		background: url("../img/popup-add-user/type-users.svg") 0 0 no-repeat;
+	}
+
+	.select__title {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		// !Отступ от текста
+		padding: 8px 35px;
+		background-color: #ffffff;
+		border-radius: 5px;
+		box-shadow: 0px 2px 2px rgba(146, 146, 146, 0.25);
+
+		cursor: pointer;
+
+		&::before,
+		&::after {
+			content: "";
+
+			position: absolute;
+			top: 50%;
+			right: 20px;
+
+			display: block;
+			width: 10px;
+			height: 2px;
+
+			transition: all 0.3s ease-out;
+
+			background-color: black;
+
+			transform: translate(-3px, -50%) rotate(45deg);
+		}
+		&::after {
+			transform: translate(3px, -50%) rotate(-45deg);
+		}
+	}
+
+	.select__content {
+		position: absolute;
+		top: 39px;
+		left: 0px;
+
+		display: none;
+		// display: flex;
+		flex-direction: column;
+
+		//! Проверить адаптив
+		width: 283.18px;
+		overflow: hidden;
+		background-color: #ffffff;
+
+		border: 0.5px solid #aaaaaa;
+		border-radius: 0px 0px 5.07px 5.07px;
+
+		transition: all 0.3s ease-out;
+
+		opacity: 0;
+	}
+	.select__content-edit {
+		position: absolute;
+		top: 39px;
+		left: 0px;
+
+		display: none;
+		// display: flex;
+		flex-direction: column;
+
+		//! Проверить адаптив
+		width: 283.18px;
+		overflow: hidden;
+		background-color: #ffffff;
+
+		border: 0.5px solid #aaaaaa;
+		border-radius: 0px 0px 5.07px 5.07px;
+
+		transition: all 0.3s ease-out;
+
+		opacity: 0;
+	}
+
+	.select__input {
+		display: none;
+
+		&:checked + label {
+			background-color: #dedede;
+		}
+		&:disabled + label {
+			opacity: 0.6;
+			pointer-events: none;
+		}
+	}
+	.select__label {
+		display: flex;
+
+		align-items: center;
+		width: 100%;
+		height: 40px;
+		padding: 0 35px;
+		transition: all 0.2s ease-out;
+		cursor: pointer;
+		overflow: hidden;
+
+		&:hover {
+			background-color: #f1f1f1;
+		}
+		&::before {
+			content: attr(data-value);
+
+			transition: all 0.2s ease-out;
+
+			opacity: 0;
+		}
+	}
+	.select__label:nth-child(2) {
+		border-bottom: 0.5px solid #aaaaaa;
+	}
+}
+
+.aside {
+	overflow-y: auto;
+	overflow-x: hidden;
+	background: rgba(97, 97, 97, 0.65);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	top: 0;
+	left: 0;
+
+	opacity: 0;
+	visibility: hidden;
+
+	&__body {
+		width: 246px;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 4;
+		background: #fff;
+		height: 100%; // min-heigth не подойдёт
+
+		transform: translateX(-100%);
+		transition: transform 0.3s;
+		will-change: transform;
+	}
+
+	.aside-active {
+		transform: translateX(0);
+	}
+
+	&__column {
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
+	}
+
+	&__top {
+		background: #f1f1f1;
+		box-shadow: 0px 2px 2px rgba(146, 146, 146, 0.25);
+		min-height: 127px;
+		margin: 0px 0px 15px 0px;
+	}
+
+	&__top-img {
+		background: url("../img/burger-menu/logo.svg") 0 0 / 100% no-repeat;
+		width: 84px;
+		height: 86px;
+
+		margin: 8px 82px 3px 80px;
+	}
+
+	&__top-username {
+		margin: 8px 11px 13px 11px;
+		font-size: 16px;
+		line-height: 19px;
+	}
+
+	&__section {
+		flex: 1 1 auto;
+	}
+	&__section-main {
+		padding: 0px 0px 18px 0px;
+		margin: 0px 0px 14px 0px;
+
+		border-bottom: 1px solid #c4c4c4;
+	}
+	&__section-servers {
+		display: block;
+		height: 45px;
+		padding: 15px 18px 14px 51px;
+		position: relative;
+		cursor: pointer;
+		background: #fff;
+	}
+	&__section-servers::before {
+		content: "";
+		background: url("../img/burger-menu/Servers.svg") 0 0 no-repeat;
+		width: 16px;
+		height: 15px;
+		position: absolute;
+		top: 14px;
+		left: 18px;
+	}
+
+	&__section-servers:hover {
+		background: #f1f1f1;
+	}
+
+	&__section-users {
+		background: #fff;
+		display: block;
+		height: 45px;
+		padding: 15px 18px 14px 51px;
+		position: relative;
+		cursor: pointer;
+	}
+	&__section-users::before {
+		content: "";
+		background: url("../img/burger-menu/Users.svg") 0 0 no-repeat;
+		width: 22px;
+		height: 15px;
+		position: absolute;
+		top: 15px;
+		left: 18px;
+	}
+	&__section-users:hover {
+		background: #f1f1f1;
+	}
+
+	&__section-exit {
+		background: #fff;
+		display: block;
+
+		height: 45px;
+		padding: 15px 18px 14px 51px;
+		position: relative;
+		cursor: pointer;
+	}
+	&__section-exit::before {
+		content: "";
+		background: url("../img/burger-menu/exit.svg") 0 0 no-repeat;
+		width: 16px;
+		height: 16px;
+		position: absolute;
+		top: 14px;
+		left: 18px;
+	}
+	&__section-exit:hover {
+		background: #f1f1f1;
+	}
+
+	&__bottom {
+		margin: 10px 0px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	&__bottom-row {
+		width: 96px;
+		font-size: 14px;
+		line-height: 16px;
+		text-align: center;
+		color: #aaaaaa;
 	}
 }

@@ -18,6 +18,13 @@
                         <div class="header__column">
                             <div class="header__menu">
                                 <!-- Бургер меню -->
+
+                                <button class="menu-btn">
+                                    <span>
+                                        <object data="img/icons/burger-menu.svg" type="image/svg+xml">SVG</object>
+                                    </span>
+                                </button>
+
                             </div>
                         </div>
                         <div class="header__column">
@@ -30,7 +37,7 @@
                                 <!-- Добавить пользователя -->
                                 <a href="#popup" class="header__add-user-link popup-link">
                                     <span>
-                                        <object data=" img/icons/add-users.svg" type="image/svg+xml">SVG</object>
+                                        <object data="img/icons/add-users.svg" type="image/svg+xml">SVG</object>
                                     </span>
                                 </a>
                                 <!-- Добавить пользователя -->
@@ -58,31 +65,25 @@
                                         </div>
                                         <div class="item__sign">starGroup</div>
                                     </div>
-                                    <label class="item__wheel-show" for="btn" onblur="closeWheelList()" tabindex="0">
-                                        <div class="item__btn">
+                                    <div class="item__btn">
 
-                                            <div class="item__wheel">
-                                                <!-- Кнопка -->
-                                                <input class="item__wheel-check" type="checkbox" id="btn"
-                                                    onclick="openWheelList(this)">
-                                                <ul class="item__wheel-list">
-                                                    <li>
-                                                        <a href="#" class="item__wheel-link">Редактировать</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="item__wheel-link">Сменить пароль</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="item__wheel-link">Добавить сервер</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="item__wheel-link">Удалить</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-
+                                        <div class="item__wheel">
+                                            <!-- Кнопка -->
+                                            <input class="item__wheel-check" type="button">
+                                            <ul class="item__wheel-list">
+                                                <li>
+                                                    <a href="#popup2" class="item__wheel-link popup-link">
+                                                        Редактировать
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="item__wheel-link">Сервера</a>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </label>
+
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -96,31 +97,26 @@
                                         </div>
                                         <div class="item__sign">Finans Bank</div>
                                     </div>
-                                    <label class="item__wheel-show" for="btn" onblur="closeWheelList()" tabindex="0">
-                                        <div class="item__btn">
+                                    <div class="item__btn">
 
-                                            <div class="item__wheel">
-                                                <!-- Кнопка -->
-                                                <input class="item__wheel-check" type="checkbox" id="btn"
-                                                    onclick="openWheelList(this)">
-                                                <ul class="item__wheel-list">
-                                                    <li>
-                                                        <a href="#" class="item__wheel-link">Редактировать</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="item__wheel-link">Сменить пароль</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="item__wheel-link">Добавить сервер</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="#" class="item__wheel-link">Удалить</a>
-                                                    </li>
-                                                </ul>
+                                        <div class="item__wheel">
+                                            <!-- Кнопка -->
+                                            <input class="item__wheel-check" type="button">
+                                            <!-- onclick="openWheelList(this)" -->
+                                            <ul class="item__wheel-list">
+                                                <li>
+                                                    <a href="#popup" class="item__wheel-link popup-link">
+                                                        Редактировать
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="item__wheel-link">Сервера</a>
+                                                </li>
+                                            </ul>
 
-                                            </div>
                                         </div>
-                                    </label>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -133,20 +129,38 @@
 
     <!--popup add-user -->
     <div id="popup" class="popup">
-        <!-- <a href="##" class="popup__area"></a> -->
         <div class="popup__body">
             <div class="popup__content">
                 <div class="popup__title">Добавить пользователя</div>
                 <form action="#" method="post" enctype="multipart/form-data" class="popup__form">
                     <div class="popup__wrapper-input">
+
+                        <div class="select" data-state="">
+                            <div class="select__title" data-default="Option 0">Обычный пользователь</div>
+
+                            <div class="select__content">
+                                <input checked id="singleSelect0" class="select__input" type="radio" name="singleSelect"
+                                    value="user">
+                                <label for="singleSelect0" class="select__label">Обычный пользователь</label>
+
+                                <input id="singleSelect1" class="select__input" type="radio" name="singleSelect"
+                                    value="admin">
+                                <label for="singleSelect1" class="select__label">Администратор</label>
+                            </div>
+                        </div>
+
                         <div class="popup__username">
-                            <input type="text" name="username" placeholder="Имя клиента" tabindex="1">
+                            <input type="text" name="username" class="inputs" placeholder="Имя" tabindex="2">
+                        </div>
+                        <div class="popup__company">
+                            <input type="text" name="company" class="inputs" placeholder="Комания" tabindex="3">
                         </div>
                         <div class="popup__login">
-                            <input type="email" name="login" placeholder="Логин или почта" tabindex="2">
+                            <input type="email" name="login" class="inputs" placeholder="Логин или почта" tabindex="4">
                         </div>
                         <div class="popup__userpass">
-                            <input type="password" name="userpass" placeholder="Пароль минимум 6 символов" tabindex="3">
+                            <input type="password" name="userpass" class="inputs"
+                                placeholder="Пароль минимум 6 символов" tabindex="5">
                         </div>
                     </div>
 
@@ -159,7 +173,7 @@
                             </div>
                             <div class="popup__button-columns">
                                 <div class="popup__button-submit">
-                                    <button type="submit" tabindex="4">Добавить</button>
+                                    <button type="submit" tabindex="6">Добавить</button>
                                 </div>
                             </div>
                         </div>
@@ -169,6 +183,109 @@
         </div>
     </div>
     <!--! end popup add-user -->
+
+
+    <!--popup edit-user -->
+    <div id="popup2" class="popup">
+        <!-- <a href="##" class="popup__area"></a> -->
+        <div class="popup__body">
+            <div class="popup__content">
+                <div class="popup__title">Редактировать пользователя</div>
+                <form action="#" method="post" enctype="multipart/form-data" class="popup__form">
+                    <div class="popup__wrapper-input">
+
+                        <div class="select" data-state="">
+                            <div class="select__title" data-default="Option 0">Обычный пользователь</div>
+
+                            <div class="select__content-edit">
+                                <input checked id="singleSelect2" class="select__input" type="radio" name="singleSelect"
+                                    value="user">
+                                <label for="singleSelect2" class="select__label">Обычный пользователь</label>
+
+                                <input id="singleSelect3" class="select__input" type="radio" name="singleSelect"
+                                    value="admin">
+                                <label for="singleSelect3" class="select__label">Администратор</label>
+                            </div>
+                        </div>
+
+                        <div class="popup__username">
+                            <input type="text" name="username" class="inputs" placeholder="Имя" tabindex="2">
+                        </div>
+                        <div class="popup__company">
+                            <input type="text" name="company" class="inputs" placeholder="Комания" tabindex="3">
+                        </div>
+                        <div class="popup__login">
+                            <input type="email" name="login" class="inputs" placeholder="Логин или почта" tabindex="4">
+                        </div>
+                        <div class="popup__userpass">
+                            <input type="password" name="userpass" class="inputs" placeholder="Новый пароль"
+                                tabindex="5">
+                        </div>
+                    </div>
+
+                    <div class="popup__wrapper-button">
+                        <div class="popup__button-row">
+                            <div class="popup__button-columns">
+                                <div class="popup__button-cancel">
+                                    <button class="popup__close-link close-popup" tabindex="5">Отмена</button>
+                                </div>
+                            </div>
+                            <div class="popup__button-columns">
+                                <div class="popup__button-submit">
+                                    <button type="submit" tabindex="6">Добавить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--! end popup edit-user -->
+
+
+    <aside class="aside">
+        <!-- ! Для затемненения фона aside__body -->
+        <div class="aside__body">
+            <div class="aside__column">
+
+                <div class="aside__top">
+                    <div class="aside__top-img">
+
+                    </div>
+                    <div class="aside__top-username">
+                        Иван Иванов
+                    </div>
+                </div>
+
+                <div class="aside__section">
+                    <div class="aside__section-main">
+                        <div class="aside__section-servers">
+                            Сервера
+                        </div>
+                        <div class="aside__section-users">
+                            Пользователи
+                        </div>
+                    </div>
+
+
+                    <div class="aside__section-exit">
+                        Выйти
+                    </div>
+                </div>
+
+
+                <div class="aside__bottom">
+                    <div class="aside__bottom-row">
+                        Servers Сontrol
+                        V.1.0.0
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </aside>
+
     <script src="js/script.js"></script>
 </body>
 
