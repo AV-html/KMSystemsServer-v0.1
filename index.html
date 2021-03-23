@@ -11,7 +11,7 @@
 
 <body>
     <div class="wrapper">
-        <header class="header">
+        <header class="header lock-padding">
             <div class="container">
                 <div class="header__body">
                     <div class="header__row">
@@ -51,7 +51,7 @@
                 </div>
             </div>
         </header>
-        <section class="content">
+        <section class="content lock-padding">
             <div class="container">
                 <div class="content__body">
                     <div class="content__column">
@@ -77,7 +77,7 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#" class="item__wheel-link">Сервера</a>
+                                                    <a href="#popup3" class="item__wheel-link popup-link">Сервера</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -110,7 +110,7 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#" class="item__wheel-link">Сервера</a>
+                                                    <a href="#popup3" class="item__wheel-link popup-link">Сервера</a>
                                                 </li>
                                             </ul>
 
@@ -156,11 +156,14 @@
                             <input type="text" name="company" class="inputs" placeholder="Комания" tabindex="3">
                         </div>
                         <div class="popup__login">
-                            <input type="email" name="login" class="inputs" placeholder="Логин или почта" tabindex="4">
+                            <!-- check-neg-login или check-login -->
+                            <span class=""><input type="email" name="login" class="inputs" placeholder="Логин или почта"
+                                    tabindex="4"></span>
                         </div>
                         <div class="popup__userpass">
-                            <input type="password" name="userpass" class="inputs"
-                                placeholder="Пароль минимум 6 символов" tabindex="5">
+                            <!-- check-neg-pass или check-pass -->
+                            <span class=""><input type="password" name="userpass" class="inputs"
+                                    placeholder="Пароль минимум 6 символов" tabindex="5"></span>
                         </div>
                     </div>
 
@@ -214,16 +217,17 @@
                         <div class="popup__company">
                             <input type="text" name="company" class="inputs" placeholder="Комания" tabindex="3">
                         </div>
-                        <div class="popup__login">
-                            <input type="email" name="login" class="inputs" placeholder="Логин или почта" tabindex="4">
+                        <div class="popup__login edit">
+                            <input disabled type="email" name="login" class="inputs" placeholder="Логин или почта"
+                                tabindex="4" value="ФЫРФЫРФЫР">
                         </div>
                         <div class="popup__userpass">
-                            <input type="password" name="userpass" class="inputs" placeholder="Новый пароль"
-                                tabindex="5">
+                            <span class=""><input type="password" name="userpass" class="inputs"
+                                    placeholder="Новый пароль" tabindex="5" value=""></span>
                         </div>
                     </div>
 
-                    <div class="popup__wrapper-button">
+                    <div class=" popup__wrapper-button">
                         <div class="popup__button-row">
                             <div class="popup__button-columns">
                                 <div class="popup__button-cancel">
@@ -243,6 +247,201 @@
     </div>
     <!--! end popup edit-user -->
 
+    <div id="popup3" class="popup add-u-ser">
+        <div class="popup__content content-popup-2">
+            <div class="wrapper-add-u-serv">
+                <header class="header-add-u-serv">
+                    <div class="container-add-u-serv">
+                        <div class="header-add-u-serv__row-add-u-serv">
+                            <div class="header-add-u-serv__search-add-u-serv">
+                                <input type="text" name="search" placeholder="Поиск">
+                            </div>
+                        </div>
+                        <div class="header-add-u-serv__tabs-add-u-serv">
+                            <div class="header-add-u-serv__tabs-row-add-u-serv">
+                                <div class="header-add-u-serv__tabs-columns-add-u-serv">
+                                    <div class="header-add-u-serv__tabs-item-add-u-serv selected">
+                                        <a href="#" class="tabs-link-add-u-serv link-all">Все</a>
+                                    </div>
+                                </div>
+                                <div class="header-add-u-serv__tabs-columns-add-u-serv">
+                                    <div class="header-add-u-serv__tabs-item-add-u-serv">
+                                        <a href="#" class="tabs-link-add-u-serv link-select">Выбранные</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gradient-top"></div>
+                    </div>
+                </header>
+
+                <section class="content-add-u-serv">
+
+                    <div class="container-add-u-serv">
+                        <div class="tabs-add-u-serv__body-add-u-serv">
+                            <div class="tabs-add-u-serv__column-add-u-serv">
+
+                                <div class="tabs-add-u-serv__rows-add-u-serv">
+                                    <label for="" class="label">
+                                        <div class="tabs-add-u-serv__item-add-u-serv">
+                                            <div class="tabs-add-u-serv__checkbox-add-u-serv"><input type="checkbox"
+                                                    class="input" name="" id=""><span
+                                                    class="tabs-add-u-serv__name-company-add-u-serv">SRV_PF_TS2</span>
+                                            </div>
+                                            <div class="tabs-add-u-serv__country-company-add-u-serv">Компания на русском
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <div class="tabs-add-u-serv__rows-add-u-serv">
+                                    <label for="" class="label">
+                                        <div class="tabs-add-u-serv__item-add-u-serv">
+                                            <div class="tabs-add-u-serv__checkbox-add-u-serv"><input type="checkbox"
+                                                    class="input" name="" id=""><span
+                                                    class="tabs-add-u-serv__name-company-add-u-serv">KMPlast_SRV_AD</span>
+                                            </div>
+                                            <div class="tabs-add-u-serv__country-company-add-u-serv">Компания на русском
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="tabs-add-u-serv__rows-add-u-serv">
+                                    <label for="" class="label">
+                                        <div class="tabs-add-u-serv__item-add-u-serv">
+                                            <div class="tabs-add-u-serv__checkbox-add-u-serv"><input type="checkbox"
+                                                    class="input" name="" id=""><span
+                                                    class="tabs-add-u-serv__name-company-add-u-serv">DC_SRV_TRAvSSIR</span>
+                                            </div>
+                                            <div class="tabs-add-u-serv__country-company-add-u-serv">Компания на русском
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="tabs-add-u-serv__rows-add-u-serv">
+                                    <label for="" class="label">
+                                        <div class="tabs-add-u-serv__item-add-u-serv">
+                                            <div class="tabs-add-u-serv__checkbox-add-u-serv"><input type="checkbox"
+                                                    class="input" name="" id=""><span
+                                                    class="tabs-add-u-serv__name-company-add-u-serv">DRIVE_GROUP</span>
+                                            </div>
+                                            <div class="tabs-add-u-serv__country-company-add-u-serv"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="tabs-add-u-serv__rows-add-u-serv">
+                                    <label for="" class="label">
+                                        <div class="tabs-add-u-serv__item-add-u-serv">
+                                            <div class="tabs-add-u-serv__checkbox-add-u-serv"><input type="checkbox"
+                                                    class="input" name="" id=""><span
+                                                    class="tabs-add-u-serv__name-company-add-u-serv">KMS_AD</span></div>
+                                            <div class="tabs-add-u-serv__country-company-add-u-serv"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="tabs-add-u-serv__rows-add-u-serv">
+                                    <label for="" class="label">
+                                        <div class="tabs-add-u-serv__item-add-u-serv">
+                                            <div class="tabs-add-u-serv__checkbox-add-u-serv"><input type="checkbox"
+                                                    class="input" name="" id=""><span
+                                                    class="tabs-add-u-serv__name-company-add-u-serv">KMPlast_SRV_AD</span>
+                                            </div>
+                                            <div class="tabs-add-u-serv__country-company-add-u-serv"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="tabs-add-u-serv__rows-add-u-serv">
+                                    <label for="" class="label">
+                                        <div class="tabs-add-u-serv__item-add-u-serv">
+                                            <div class="tabs-add-u-serv__checkbox-add-u-serv"><input type="checkbox"
+                                                    class="input" name="" id=""><span
+                                                    class="tabs-add-u-serv__name-company-add-u-serv">KMPlast_SRV_AD</span>
+                                            </div>
+                                            <div class="tabs-add-u-serv__country-company-add-u-serv"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="tabs-add-u-serv__rows-add-u-serv">
+                                    <label for="" class="label">
+                                        <div class="tabs-add-u-serv__item-add-u-serv">
+                                            <div class="tabs-add-u-serv__checkbox-add-u-serv"><input type="checkbox"
+                                                    class="input" name="" id=""><span
+                                                    class="tabs-add-u-serv__name-company-add-u-serv">KMPlast_SRV_AD</span>
+                                            </div>
+                                            <div class="tabs-add-u-serv__country-company-add-u-serv"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="tabs-add-u-serv__rows-add-u-serv">
+                                    <label for="" class="label">
+                                        <div class="tabs-add-u-serv__item-add-u-serv">
+                                            <div class="tabs-add-u-serv__checkbox-add-u-serv"><input type="checkbox"
+                                                    class="input" name="" id=""><span
+                                                    class="tabs-add-u-serv__name-company-add-u-serv">KMPlast_SRV_AD</span>
+                                            </div>
+                                            <div class="tabs-add-u-serv__country-company-add-u-serv"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="tabs-add-u-serv__rows-add-u-serv">
+                                    <label for="" class="label">
+                                        <div class="tabs-add-u-serv__item-add-u-serv">
+                                            <div class="tabs-add-u-serv__checkbox-add-u-serv"><input type="checkbox"
+                                                    class="input" name="" id=""><span
+                                                    class="tabs-add-u-serv__name-company-add-u-serv">KMPlast_SRV_AD</span>
+                                            </div>
+                                            <div class="tabs-add-u-serv__country-company-add-u-serv"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="tabs-add-u-serv__rows-add-u-serv">
+                                    <label for="" class="label">
+                                        <div class="tabs-add-u-serv__item-add-u-serv">
+                                            <div class="tabs-add-u-serv__checkbox-add-u-serv"><input type="checkbox"
+                                                    class="input" name="" id=""><span
+                                                    class="tabs-add-u-serv__name-company-add-u-serv">KMPlast_SRV_AD</span>
+                                            </div>
+                                            <div class="tabs-add-u-serv__country-company-add-u-serv"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="tabs-add-u-serv__rows-add-u-serv">
+                                    <label for="" class="label">
+                                        <div class="tabs-add-u-serv__item-add-u-serv">
+                                            <div class="tabs-add-u-serv__checkbox-add-u-serv"><input type="checkbox"
+                                                    class="input" name="" id=""><span
+                                                    class="tabs-add-u-serv__name-company-add-u-serv">KMPlast_SRV_AD</span>
+                                            </div>
+                                            <div class="tabs-add-u-serv__country-company-add-u-serv"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <footer class="footer-add-u-serv">
+                    <div class="container-add-u-serv">
+                        <div class="footer-add-u-serv__gradient"></div>
+                        <div class="footer-add-u-serv__row-add-u-serv">
+                            <div class="footer-add-u-serv__column-add-u-serv">
+                                <div class="footer-add-u-serv__item-add-u-serv">
+                                    <button class="footer-add-u-serv__btn-cancel-add-u-serv close-popup">Отмена</button>
+                                </div>
+                            </div>
+                            <div class="footer-add-u-serv__column-add-u-serv">
+                                <div class="footer-add-u-serv__item-add-u-serv">
+                                    <button type="submit"
+                                        class="footer-add-u-serv__btn-submit-add-u-serv">Добавить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
 
     <aside class="aside">
         <!-- ! Для затемненения фона aside__body -->
@@ -285,7 +484,6 @@
             </div>
         </div>
     </aside>
-
     <script src="js/script.js"></script>
 </body>
 

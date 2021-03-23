@@ -17,7 +17,8 @@ body.lock {
 }
 
 .header {
-	position: relative;
+	position: fixed;
+	width: 100%;
 	top: 0;
 	left: 0;
 	z-index: 1;
@@ -25,7 +26,7 @@ body.lock {
 	box-shadow: 0px 3px 2px rgba(146, 146, 146, 0.25);
 
 	&__body {
-		max-width: 299px;
+		width: 299px;
 		margin: 0px auto;
 	}
 
@@ -41,9 +42,6 @@ body.lock {
 		flex: 0 1 33.333%;
 	}
 	&__menu {
-		// background: url("../img/icons/burger-menu.svg") 0 0 / 100% no-repeat;
-		// width: 21px;
-		// height: 13px;
 		cursor: pointer;
 		//! Кнопка SVG
 		button {
@@ -76,10 +74,6 @@ body.lock {
 			}
 		}
 		//! Ссылка SVG
-		// background: url("../img/icons/add-users.svg") 0 0 / 100% no-repeat;
-		// width: 23px;
-		// height: 17px;
-		// cursor: pointer;
 	}
 
 	&__search {
@@ -96,7 +90,7 @@ body.lock {
 		padding: 0px 20px;
 
 		border-radius: 50px;
-		min-width: 299px;
+		width: 299px;
 		height: 28px;
 
 		background: #ffffff;
@@ -113,7 +107,7 @@ body.lock {
 
 	&__body {
 		max-width: 349px;
-		margin: 0px 13px;
+		margin: 97px 13px 0px;
 		padding: 23px 0px;
 		min-height: 568px;
 		background: url("../img/background-logo.svg") 50% 50% / auto 220px no-repeat fixed;
@@ -265,10 +259,10 @@ body.lock {
 	// Скрытие
 	opacity: 0;
 	visibility: hidden;
-	-webkit-transition: all 0.6s ease-in-out 0s;
-	-moz-transition: all 0.6s ease-in-out 0s;
-	-o-transition: all 0.6s ease-in-out 0s;
-	transition: all 0.6s ease-in-out 0s;
+	-webkit-transition: all 0.4s ease-in-out 0s;
+	-moz-transition: all 0.4s ease-in-out 0s;
+	-o-transition: all 0.4s ease-in-out 0s;
+	transition: all 0.4s ease-in-out 0s;
 
 	&.open {
 		opacity: 1;
@@ -359,6 +353,12 @@ body.lock {
 	&__login {
 		margin: 0px 0px 23px 0px;
 		position: relative;
+	}
+	.edit {
+		input {
+			background: #f6f6f6;
+			color: black;
+		}
 	}
 	&__login::before {
 		content: "";
@@ -654,7 +654,7 @@ body.lock {
 	}
 
 	&__top-img {
-		background: url("../img/burger-menu/logo.svg") 0 0 / 100% no-repeat;
+		background: url("../img/burger-menu/logo.svg") 0 0 no-repeat;
 		width: 84px;
 		height: 86px;
 
@@ -754,4 +754,338 @@ body.lock {
 		text-align: center;
 		color: #aaaaaa;
 	}
+}
+// !!!!!!!!!
+// !2 окно!!
+// !!!!!!!!!
+
+.add-u-ser {
+	background: #e5e5e5;
+}
+.content-popup-2 {
+	max-width: 100%;
+	background: #e5e5e5;
+	border: none;
+	border-radius: none;
+}
+
+.wrapper-add-u-serv {
+	min-height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.container-add-u-serv {
+	max-width: 375px;
+	margin: 0px auto;
+}
+
+.header-add-u-serv {
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+
+	&__row-add-u-serv {
+		background: #e5e5e5;
+		display: flex;
+		height: 78px;
+		justify-content: center;
+		align-items: center;
+	}
+	&__search-add-u-serv {
+		flex: 1 1 auto;
+		max-width: 349px;
+		margin: 19px 13px;
+		input {
+			padding: 0px 35px;
+			width: 100%;
+			height: 40px;
+			background: #ffffff;
+			border: 0.5px solid #aaaaaa;
+			box-shadow: 0px 2px 2px rgba(146, 146, 146, 0.25);
+			border-radius: 5.07498px 5.07498px 5.07px 5.07px;
+		}
+	}
+	&__tabs-add-u-serv {
+		background: #e5e5e5;
+	}
+	&__tabs-row-add-u-serv {
+		margin: 0px auto;
+		max-width: 331px;
+		display: flex;
+		border-bottom: 0.5px solid #cbcbcb;
+	}
+
+	&__tabs-columns-add-u-serv {
+		flex: 1 1 50%;
+		max-width: 331px;
+	}
+
+	&__tabs-item-add-u-serv {
+		text-align: center;
+		margin-bottom: 12px;
+		a {
+			line-height: 14px;
+			font-size: 12px;
+			color: #000000;
+		}
+	}
+}
+.gradient-top {
+	width: 100%;
+	display: none;
+	// max-width: 349px;
+	height: 20px;
+	margin: 0px auto;
+	background: -moz-linear-gradient(top, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 0) 100%);
+	background: -webkit-linear-gradient(top, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 0) 100%);
+	background: linear-gradient(to bottom, rgba(229, 229, 229, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.content-add-u-serv {
+	margin-top: 78+27+7+2px;
+	margin-bottom: 46px + 25px + 11px + 20px;
+	flex: 1 1 auto;
+}
+.selected {
+	position: relative;
+	a {
+		color: #1e83bb;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 20px;
+		left: 20%;
+		width: 100px;
+		height: 7px;
+		background: #1e83bb;
+		border-radius: 10px 10px 3px 3px;
+	}
+}
+
+.tabs-add-u-serv {
+	&__body-add-u-serv {
+		max-width: 349px;
+		margin: 0px auto;
+		margin: 0px 13px;
+	}
+
+	&__column-add-u-serv {
+		display: flex;
+		flex-direction: column;
+		border: 0.5px solid #aaaaaa;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+
+	&__rows-add-u-serv {
+		position: relative;
+		flex: 1 1 auto;
+		height: 40px;
+		border-bottom: 0.5px solid #aaaaaa;
+	}
+	&__rows-add-u-serv:last-of-type {
+		border-bottom: none;
+	}
+
+	&__item-add-u-serv:hover {
+		background: #f1f1f1;
+		.tabs__country-company {
+			color: #000;
+		}
+	}
+
+	&__item-add-u-serv {
+		padding: 13px 0px 13px 35px;
+		height: 100%;
+		background: #ffffff;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		cursor: pointer;
+	}
+	&__checkbox-add-u-serv {
+		input {
+			position: absolute;
+			z-index: -1;
+			opacity: 0;
+		}
+	}
+
+	&__rows-add-u-serv:before {
+		content: "";
+		pointer-events: none;
+		position: absolute;
+		top: 13px;
+		left: 10px;
+		width: 13px;
+		height: 13px;
+		border-radius: 3px;
+		border: 1px solid #c4c4c4;
+		background: rgba(255, 255, 255, 0.75);
+	}
+
+	&__checkbox-add-u-serv.active:before {
+		content: "";
+		position: absolute;
+		top: 13px;
+		left: 10px;
+		width: 15.1px;
+		height: 10.5px;
+		background: url("../img/icons/Check.svg") no-repeat;
+	}
+	&__name-company-add-u-serv {
+		font-size: 12px;
+		line-height: 14px;
+	}
+	&__country-company-add-u-serv {
+		font-size: 12px;
+		line-height: 14px;
+		color: #aaaaaa;
+		padding: 0px 25px 0 10px;
+	}
+}
+
+.footer-add-u-serv {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+
+	&__gradient {
+		width: 100%;
+		height: 20px;
+		margin: 0px auto;
+		background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(229, 229, 229, 1) 100%);
+		background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(229, 229, 229, 1) 100%);
+		background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(229, 229, 229, 1) 100%);
+	}
+	&__row-add-u-serv {
+		background: #e5e5e5;
+
+		display: flex;
+		padding: 11px 13px 25px 13px;
+		margin: 0px -9px;
+	}
+
+	&__column-add-u-serv {
+		flex: 1 1 50%;
+		padding: 0px 9px;
+	}
+
+	&__item-add-u-serv {
+		button {
+			border: 1px solid #c4c4c4;
+			box-sizing: border-box;
+			border-radius: 10px;
+			width: 100%;
+			height: 46px;
+			max-width: 166px;
+		}
+	}
+	&__btn-cancel-add-u-serv {
+		background: rgba(255, 255, 255, 0.75);
+		color: #2e2e2e;
+		font-size: 11px;
+		line-height: 13px;
+	}
+	&__btn-submit-add-u-serv {
+		background: #002c5b;
+		color: #ffffff;
+		font-size: 11px;
+		line-height: 13px;
+	}
+}
+
+// Пароль сложный
+.check-pass:before {
+	content: "";
+	background: url("../img/popup-add-user/check.svg") 0 0 no-repeat;
+	width: 15.1px; // Размер иконки
+	height: 10.5px;
+	position: absolute;
+	top: 15px;
+	right: 16.48px;
+}
+
+.check-pass:after {
+	content: "Сложный";
+	position: absolute;
+	z-index: 5;
+	top: 43px;
+	right: 7px;
+	font-size: 9px;
+	line-height: 11px;
+	color: #71d74d;
+}
+
+// Пароль простой
+.check-neg-pass:before {
+	content: "";
+	background: url("../img/popup-add-user/cross.svg") 0 0 no-repeat;
+	width: 11px; // Размер иконки
+	height: 11px;
+	position: absolute;
+	top: 15px;
+	right: 16.48px;
+}
+
+.check-neg-pass:after {
+	content: "Простой";
+	position: absolute;
+	z-index: 5;
+	top: 43px;
+	right: 5px;
+	font-size: 9px;
+	line-height: 11px;
+	color: #e64e4e;
+}
+
+// Логин занят
+.check-neg-login:before {
+	content: "";
+	background: url("../img/popup-add-user/cross.svg") 0 0 no-repeat;
+	width: 11px; // Размер иконки
+	height: 11px;
+	position: absolute;
+	top: 15px;
+	right: 16.48px;
+}
+
+.check-neg-login:after {
+	content: "Занят";
+	position: absolute;
+	z-index: 5;
+	top: 43px;
+	right: 10px;
+	font-size: 9px;
+	line-height: 11px;
+	color: #e64e4e;
+}
+
+// Логин свободен
+.check-login:before {
+	content: "";
+	background: url("../img/popup-add-user/check.svg") 0 0 no-repeat;
+	width: 15.1px; // Размер иконки
+	height: 10.5px;
+	position: absolute;
+	top: 15px;
+	right: 16.48px;
+}
+
+.check-login:after {
+	content: "Свободен";
+	position: absolute;
+	z-index: 5;
+	top: 43px;
+	right: 5px;
+	font-size: 9px;
+	line-height: 11px;
+	color: #71d74d;
 }
